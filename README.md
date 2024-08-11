@@ -1,0 +1,1 @@
+# cypress-automation-test-store
