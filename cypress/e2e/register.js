@@ -6,6 +6,9 @@ import AccountLoginPage from "../pageObject/AccountLoginPage";
 describe("Register new account", () => {
 
     before(() => {
+        cy.fixture("registrationFormData").then((data) => {
+            globalThis.data = data
+        })
         cy.visit("/")
     })
 
@@ -21,6 +24,6 @@ describe("Register new account", () => {
 
         // assertions
         cy.url().should("include", "rt=account/create")
-        
+
     })
 })
