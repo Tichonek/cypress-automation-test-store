@@ -81,6 +81,11 @@ class CreateAccountForm {
     getContinueButton() {
         return cy.get("button[title='Continue']")
     }
+
+    fillPersonalDetailsForm({firstName, lastName, email, telephone, fax} = {}) {
+        if(firstName) this.getFirstNameField().type(firstName)
+        if(lastName) this.getLastNameField().type(lastName)
+    }
 }
 
 export default new CreateAccountForm()
