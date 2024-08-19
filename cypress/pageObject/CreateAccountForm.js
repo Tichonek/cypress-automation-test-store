@@ -95,6 +95,12 @@ class CreateAccountForm {
         if(region) this.getRegionField().select(region)
         if(zipCode) this.getZipCodeField().type(zipCode)
     }
+
+    fillLoginDetailsForm({login, password, confirmPassword} = {}) {
+        if(login) this.getLoginField().type(login)
+        if(password) this.getPasswordField().type(password)
+        if(confirmPassword) this.getPasswordConfirmField().type(confirmPassword)
+    }
 }
 
 export default new CreateAccountForm()
