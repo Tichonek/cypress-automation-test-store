@@ -85,6 +85,15 @@ class CreateAccountForm {
     fillPersonalDetailsForm({firstName, lastName, email, telephone, fax} = {}) {
         if(firstName) this.getFirstNameField().type(firstName)
         if(lastName) this.getLastNameField().type(lastName)
+        if(email) this.getEmailField().type(email)
+    }
+
+    fillAddressForm({company, address1, address2, city, country, region, zipCode} = {}) {
+        if(address1) this.getAddress1Field().type(address1)
+        if(city) this.getCityField().type(city)
+        if(country) this.getCountryField().select(country)
+        if(region) this.getRegionField().select(region)
+        if(zipCode) this.getZipCodeField().type(zipCode)
     }
 }
 
