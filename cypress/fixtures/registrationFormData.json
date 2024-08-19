@@ -3,7 +3,7 @@
         "firstName": "Fredericka",
         "lastName": "House",
         "email": "duis.risus@outlook.com",
-        "telephon": 15329478603,
+        "telephone": 15329478603,
         "fax": "+19292070142"
     },
     "address": {
@@ -11,7 +11,7 @@
         "address1": "Ap #855-5340 Ut Av",
         "address2": "6126 Feugiat Rd.",
         "city": "Zawichost",
-        "region": "Dundee",
+        "region": "Austurland",
         "zipCode": "43-333",
         "country": "Iceland"
     },
