@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("CheckFormVisibility", () => {
+    cy.get(".registerbox").each(($div) => {
+        cy.wrap($div).find("input, select").each(($el) => {
+            cy.wrap($el).should("be.visible")
+            cy.wrap($el).should("be.enabled")
+        })
+    })
+})
