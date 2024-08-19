@@ -28,10 +28,23 @@ describe("Register new account", () => {
         cy.CheckFormVisibility()
 
         //CreateAccountForm.getFirstNameField().type(data.firstName)
+        //  fill personal details
         CreateAccountForm.fillPersonalDetailsForm({
             firstName: data.personalDeatils.firstName, 
-            lastName: data.personalDeatils.lastName
+            lastName: data.personalDeatils.lastName,
+            email: data.personalDeatils.email
         })
+
+        //  fill address
+        CreateAccountForm.fillAddressForm({
+            address1: data.address.address1,
+            city: data.address.city,
+            region: data.address.region,
+            zipCode: data.address.zipCode,
+            country: data.address.country
+        })
+
+
 
         CreateAccountForm.getFirstNameField().should("have.value", data.personalDeatils.firstName)
 
