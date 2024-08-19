@@ -44,6 +44,13 @@ describe("Register new account", () => {
             country: data.address.country
         })
 
+        // fill login details
+        CreateAccountForm.fillLoginDetailsForm({
+            login: data.loginDetails.login,
+            password: data.loginDetails.password,
+            confirmPassword: data.loginDetails.password
+        })
+
 
 
         CreateAccountForm.getFirstNameField().should("have.value", data.personalDeatils.firstName)
