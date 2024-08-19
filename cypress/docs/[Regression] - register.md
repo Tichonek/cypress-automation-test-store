@@ -6,7 +6,7 @@ Post-Requisite: Account created
 Test Execution Steps:
 1. Click "Login or register" in the top right corner
 2. Click "Continue" under section "I am a new customer"
-3. Complete the registration form with valid data
+3. Fill in the mandatory form fields with correct data
 4. Check the privacy policy checkbox
 5. Click "Continue"
 
