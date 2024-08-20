@@ -51,9 +51,15 @@ describe("Register new account", () => {
             confirmPassword: data.loginDetails.password
         })
 
+        //  check privacy policy
+        CreateAccountForm.getPrivacyPolicyCheckbox().check()
 
 
-        CreateAccountForm.getFirstNameField().should("have.value", data.personalDeatils.firstName)
+
+        //CreateAccountForm.getFirstNameField().should("have.value", data.personalDeatils.firstName)
+        
+        //  assertions for form fields
+        cy.verifyFormFields(CreateAccountForm, data)
 
     })
 })
