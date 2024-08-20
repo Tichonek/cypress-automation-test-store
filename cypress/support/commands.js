@@ -32,3 +32,33 @@ Cypress.Commands.add("CheckFormVisibility", () => {
         })
     })
 })
+
+Cypress.Commands.add("verifyFormFields", (formPage, formData) => {
+    const fields = [
+        {selector: () => formPage.getFirstNameField(), value: formData.personalDeatils.firstName},
+        {selector: () => formPage.getLastNameField(), value: formData.personalDeatils.lastName},
+        {selector: () => formPage.getEmailField(), value: formData.personalDeatils.email},
+        {selector: () => formPage.getTelephoneField(), value: formData.personalDeatils.telephone},
+        {selector: () => formPage.getFaxNField(), value: formData.personalDeatils.fax},
+
+        {selector: () => formPage.getCompanyField(), value: formData.address.company},
+        {selector: () => formPage.getAddress1Field(), value: formData.address.address1},
+        {selector: () => formPage.getAddress2Field(), value: formData.address.address2},
+        {selector: () => formPage.getCityField(), value: formData.address.city},
+        {selector: () => formPage.getRegionField(), value: formData.address.region},
+        {selector: () => formPage.getZipCodeField(), value: formData.address.zipCode},
+        {selector: () => formPage.getCountryField(), value: formData.address.country},
+
+        {selector: () => formPage.getLoginField(), value: formData.loginDetails.login},
+        {selector: () => formPage.getPasswordField(), value: formData.loginDetails.password},
+        {selector: () => formPage.getPasswordConfirmField(), value: formData.loginDetails.password}
+    ]
+
+    fields.forEach(field => {
+        if(field.value) {
+            field.selector().should("have.value", field.value)
+        } else {
+            field.selector().should("have.value", "")
+        }
+    })
+})
