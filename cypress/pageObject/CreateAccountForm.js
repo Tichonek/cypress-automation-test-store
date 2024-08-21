@@ -101,6 +101,12 @@ class CreateAccountForm {
         if(password) this.getPasswordField().type(password)
         if(confirmPassword) this.getPasswordConfirmField().type(confirmPassword)
     }
+
+    /*verifyFieldValue(selector, expectedValue) {
+        if(expectedValue) {
+            selector.should("have.value", expectedValue)
+        }
+    }*/
 }
 
 export default new CreateAccountForm()

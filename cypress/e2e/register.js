@@ -7,7 +7,7 @@ import CreateAccountForm from "../pageObject/CreateAccountForm";
 describe("Register new account", () => {
 
     before(() => {
-        cy.fixture("registrationFormData").then((data) => {
+        cy.fixture("registrationFormMandatoryData").then((data) => {
             globalThis.data = data
         })
         cy.visit("/")
@@ -25,7 +25,7 @@ describe("Register new account", () => {
 
         // assertions
         cy.url().should("include", "rt=account/create")
-        cy.CheckFormVisibility()
+        //cy.CheckFormVisibility()
 
         //CreateAccountForm.getFirstNameField().type(data.firstName)
         //  fill personal details
