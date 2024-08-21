@@ -32,12 +32,16 @@ describe("Register new account", () => {
         CreateAccountForm.fillPersonalDetailsForm({
             firstName: data.personalDeatils.firstName, 
             lastName: data.personalDeatils.lastName,
-            email: data.personalDeatils.email
+            email: data.personalDeatils.email,
+            telephone: data.personalDeatils.telephone,
+            fax: data.personalDeatils.fax
         })
 
         //  fill address
         CreateAccountForm.fillAddressForm({
+            company: data.address.company,
             address1: data.address.address1,
+            address2: data.address.address2,
             city: data.address.city,
             region: data.address.region,
             zipCode: data.address.zipCode,

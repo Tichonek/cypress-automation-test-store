@@ -86,10 +86,14 @@ class CreateAccountForm {
         if(firstName) this.getFirstNameField().type(firstName)
         if(lastName) this.getLastNameField().type(lastName)
         if(email) this.getEmailField().type(email)
+        if(telephone) this.getTelephoneField().type(telephone)
+        if(fax) this.getFaxNField().type(fax)
     }
 
     fillAddressForm({company, address1, address2, city, country, region, zipCode} = {}) {
+        if(company) this.getCompanyField().type(company)
         if(address1) this.getAddress1Field().type(address1)
+        if(address2) this.getAddress2Field().type(address2)
         if(city) this.getCityField().type(city)
         if(country) this.getCountryField().select(country)
         if(region) this.getRegionField().select(region)
