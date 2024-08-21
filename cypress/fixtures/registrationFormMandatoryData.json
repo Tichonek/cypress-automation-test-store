@@ -1,0 +1,19 @@
+{   
+    "personalDeatils": {
+        "firstName": "Fredericka",
+        "lastName": "House",
+        "email": "duis.risus@outlook.com"
+    },
+    "address": {
+        "address1": "Ap #855-5340 Ut Av",
+        "city": "Zawichost",
+        "region": "Austurland",
+        "zipCode": "43-333",
+        "country": "Iceland"
+    },
+    "loginDetails": {
+        "login": "bestLogin11",
+        "password": "zaq1@WSX"
+    }
+ 
+}

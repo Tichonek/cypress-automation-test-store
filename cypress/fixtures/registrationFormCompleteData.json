@@ -1,0 +1,23 @@
+{   
+    "personalDeatils": {
+        "firstName": "Fredericka",
+        "lastName": "House",
+        "email": "duis.risus@outlook.com",
+        "telephone": 15329478603,
+        "fax": "+19292070142"
+    },
+    "address": {
+        "company": "ABAP SA",
+        "address1": "Ap #855-5340 Ut Av",
+        "address2": "6126 Feugiat Rd.",
+        "city": "Zawichost",
+        "region": "Austurland",
+        "zipCode": "43-333",
+        "country": "Iceland"
+    },
+    "loginDetails": {
+        "login": "bestLogin11",
+        "password": "zaq1@WSX"
+    }
+ 
+}
