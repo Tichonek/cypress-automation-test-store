@@ -45,9 +45,9 @@ Cypress.Commands.add("verifyFormFields", (formPage, formData) => {
         {selector: () => formPage.getAddress1Field(), value: formData.address.address1},
         {selector: () => formPage.getAddress2Field(), value: formData.address.address2},
         {selector: () => formPage.getCityField(), value: formData.address.city},
-        {selector: () => formPage.getRegionField(), value: formData.address.region},
+        {selector: () => formPage.getRegionField(), value: formData.address.region, type: "select"},
         {selector: () => formPage.getZipCodeField(), value: formData.address.zipCode},
-        {selector: () => formPage.getCountryField(), value: formData.address.country},
+        {selector: () => formPage.getCountryField(), value: formData.address.country, type: "select"},
 
         {selector: () => formPage.getLoginField(), value: formData.loginDetails.login},
         {selector: () => formPage.getPasswordField(), value: formData.loginDetails.password},
@@ -55,10 +55,25 @@ Cypress.Commands.add("verifyFormFields", (formPage, formData) => {
     ]
 
     fields.forEach(field => {
-        if(field.value) {
+        if(field.type === "select") {
+            
+            if(field.value !== undefined) {
+                field.selector().find("option:selected").should("have.text", field.value)
+            } else {
+                field.selector().find("option:selected").should("have.text", "")
+            }
+
+        } else {
+            if(field.value !== undefined) {
+                field.selector().should("have.value", field.value)
+            } else {
+                field.selector().should("have.value", "")
+            }
+        }
+        /*if(field.value) {
             field.selector().should("have.value", field.value)
         } else {
             field.selector().should("have.value", "")
-        }
+        }*/
     })
 })
