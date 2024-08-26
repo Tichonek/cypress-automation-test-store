@@ -3,6 +3,7 @@
 import HomePage from "../pageObject/HomePage";
 import AccountLoginPage from "../pageObject/AccountLoginPage";
 import CreateAccountForm from "../pageObject/CreateAccountForm";
+import AccountSuccessPage from "../pageObject/AccountSuccessPage";
 
 describe("Register new account", () => {
 
@@ -25,7 +26,7 @@ describe("Register new account", () => {
 
         // assertions
         cy.url().should("include", "rt=account/create")
-        //cy.CheckFormVisibility()
+        cy.CheckFormVisibility()
 
         //CreateAccountForm.getFirstNameField().type(data.firstName)
         //  fill personal details
@@ -64,6 +65,13 @@ describe("Register new account", () => {
         
         //  assertions for form fields
         cy.verifyFormFields(CreateAccountForm, data)
+
+        //  send form
+        CreateAccountForm.getContinueButton().click()
+
+        //  assertions for account creation
+        cy.url().should("include", "rt=account/success")
+        AccountSuccessPage.getConfirmText().should("contain", " Your Account Has Been Created!")
 
     })
 })
