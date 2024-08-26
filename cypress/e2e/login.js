@@ -24,5 +24,10 @@ describe("Login to account", () => {
         //  assertions for form fields
         AccountLoginPage.getLoginInput().should("have.value", data.login)
         AccountLoginPage.getPasswordInput().should("have.value", data.password)
+
+        AccountLoginPage.getLoginButton().click()
+
+        //  assertions for logged uesr
+        cy.url().should("include", "rt=account/account")
     })
 })
