@@ -10,6 +10,8 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     viewportHeight: 1080,
     viewportWidth: 1920,
+    screenshotOnRunFailure: true,
+    trashAssetsBeforeRuns: true,
     reporter: 'cypress-multi-reporters',
     reporterOptions: {
       configFile: 'reporter-config.json',
