@@ -9,6 +9,10 @@ module.exports = defineConfig({
     baseUrl: "https://automationteststore.com",
     chromeWebSecurity: false,
     viewportHeight: 1080,
-    viewportWidth: 1920
+    viewportWidth: 1920,
+    reporter: 'cypress-multi-reporters',
+    reporterOptions: {
+      configFile: 'reporter-config.json',
+    }
   },
 });
